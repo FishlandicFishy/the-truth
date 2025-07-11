@@ -6,3 +6,5 @@ Recently, there are numerous extremist organisations creating "truth" websites w
 ## Disclaimer
 
 This website is a satirical take on stereotypical extremist propaganda sites. Nothing on this site is true. I do not intend to offend or endorse any views. The font used for the SVG above is BabelStone Modern, which is available [here](http://www.babelstone.co.uk/Fonts/Download/BabelStoneModern.ttf).
+
+The website and its HTML files are in the public domain. The "image proof" belongs to its creator.
