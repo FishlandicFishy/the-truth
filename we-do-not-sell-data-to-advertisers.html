@@ -1,0 +1,241 @@
+<html>
+<head>
+<style>
+  body {
+    background-color: rgb(31, 31, 31);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #e8e8e8;
+  }
+  
+  .dialog-container {
+    width: 640px;
+    background-color: rgba(32, 33, 36, 1);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .icon-container {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  
+  .icon {
+    height: 40px;
+    width: 40px;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+  
+  .subtitle {
+    font-size: 14px;
+    margin-bottom: 16px;
+    text-align: left;
+  }
+  
+  .bullet-list {
+    text-align: left;
+    margin-bottom: 24px;
+    padding-left: 20px;
+    list-style-type: none;
+  }
+  
+  .bullet-list li {
+    margin-bottom: 8px;
+    position: relative;
+  }
+  
+  .bullet-list li::before {
+    content: "•";
+    position: absolute;
+    left: -15px;
+    color: #8ab4f8;
+  }
+  
+  .buttons-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+  
+  .button {
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: #8ab4f8;
+    transition: all 0.2s;
+    position: relative;
+  }
+  
+  .button::before {
+    content: "❤️";
+    position: absolute;
+    left: 4px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  
+  .button:hover::before,
+  .button:focus::before {
+    opacity: 1;
+  }
+  
+  .button:hover {
+    background-color: rgba(138, 180, 248, 0.1);
+    padding-left: 34px;
+  }
+  
+  .button:focus {
+    outline: none;
+    background-color: rgba(138, 180, 248, 0.1);
+    padding-left: 34px;
+  }
+  
+  .button:active {
+    background-color: rgba(138, 180, 248, 0.2);
+  }
+</style>
+</head>
+<body>
+  <div class="dialog-container">
+    <div class="icon-container">
+      <img class="icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAMAAADQmBKKAAAAw1BMVEUAAADv7+/s7+/r7e3s7u7t7u7t7e7s7e7s7u7s7Ozv7+/t7+/t7u7s7e3t7e7t7e7s7+/s7e7s7O/s7Ozs7/Lr7e3s7e3r7O7s7e7f4OGsrK2FhoZsbW1FRkY5OTkfHx9SU1NfYGCSk5OfoKDT09S5ubrS09SSk5QsLCx4eXp5eXmfn6DGxseTk5OGhoZsbG1sbGx4eXlGRkasra2rra1gYGDGx8fFxsdfX1+Fhod5eXrs7O/s7e/r6+3q6uzq7O3q7O2M+AO8AAAAQXRSTlMAEGCPr9/v/79gIH/Pn8/fX+9QUF+AkLDf/////////////////////////////////////////////2CfgGCgkA4HJLcAAANzSURBVHgB7duFcqRAEIDhjtEs2biiQ3aBsBp3ff+XOiHpinAdq2roqpu//PTLzOAAtWZm5+YXHJRvwZ3rePBJM4suNlqXMRHHweZbYknyHKZF+FfeMrbWige1Vh1ssbX12nRhyy0q8TCiDVTQ5ovHc1BBax5QK6iirpoFRG1BlYdaWpupQEuopi0aIFVD1EHUNUTLqCiXZkxNM9BBVXVgG1W1DS6qagdWUFW7gLpaA1SWBVmQBVmQBVmQBVmQBQlnQX4QRnFi/pSke2Hgtwvye6l5V9rPWgPlpHlXlMuDOA5TmjcOKojDFGXNgvZL80lJv0GQPzAvxcPRuBqOLA+GsXlp0BioiA2V9vx3vzdKXqhZM6Ai+XjtvpCSTAbEeMoJUhyJRKIgmq80+8I2GPviIFrPQ/ywKa1sadC+eWqK+DVRTxZUlKyHEZWZKOig7mEbmqpUEjRi/g9/UJb11ZKaqlwQlDAbczVwA2Z+UzEQDVAf31dWqwXfN6EhkgHRHCTIgLi/kEqBCm6A8ND8KcJauanyhUBH3AChf1iWQ58d054Q6JgbIL4ezZkAiGYsw2/k05xJgE6eDpfIx47qqQgoNH87QjZ+3YUioDP6Yb+/64oEQDT6OX6rc5pnAVDCr2lTxW8JiQjIVP38tyzIgpQtatrsL74DouN9Krhj7PMg/nhzKQI64g8dPIg/dIgeXHmQ5MGVP5XgQYXk6Qd/+seDRpInaBiy/zoLSmhDEAGdm6qcBTEDZDLZy6CUA3EDFKEUKOduaDCgkfCFIg1RmX0NVCTSl9I0RCkDav5mA6bfuC92ZaqiRm5YXX3Zk2SiIJwYRsR4TB9lQTjkRfy9UUmQ/73bwk3eOE/6/KMZ4RvnjIgh5alhPKIPX4iUMQ89pR6+8Cubiq+DPMM/ZePRdWxeGvrYGAgnpfmkctLwI85Dw8dvgxIgapToeQhMpJTniIL4imFc00zH7b5qUQTh3vOrFvHeMPDtyygWZEEWZEEWZEEWZEEW9L+B1lBX+j6anEdVufo+vO2gqm5gBlXlAbioqGUA2NI1YwAza7pmTNUQ3QLoGiIPQNUQ3cFzXVTRClCeiklzPKDgBhW0Dq+607OASKTGQ62vYYs591DLW8HWWvaA0jBtzh0weQ+tcGaAz7vpYqO5Lxze9OguoHzOwvzjTV3zG4S+sorVRM+vAAAAAElFTkSuQmCC" alt="">
+    </div>
+    
+    <div class="title">You're not getting a more personalized Search</div>
+    
+    <div class="subtitle">With Web & App Activity off, you don't get</div>
+    
+    <ul class="bullet-list">
+      <li>More relevant Search results</li>
+      <li>More tailored Discover stories</li>
+      <li>Shopping recommendations for you</li>
+    </ul>
+    
+    <div class="buttons-container">
+      <button class="button" id="continue-btn">Continue</button>
+      <button class="button" id="ask-later-btn">Ask me in 3 days</button>
+    </div>
+  </div>
+
+  <script>
+    // Function to create Deltarune-style buttons
+    function createDeltaruneButton(text, onClick) {
+      const button = document.createElement('button');
+      button.className = 'button';
+      button.textContent = text;
+      button.onclick = onClick;
+      
+      // Keyboard navigation support
+      button.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          onClick();
+        }
+      });
+      
+      return button;
+    }
+
+    // Function to show the custom alert
+    function showCustomAlert() {
+      const randomNum = Math.random();
+      let message = "Proceed?";
+      let options = ["Proceed", "Proceed"];
+      
+      if (randomNum < 0.05) {
+        message = "You stupid,\nwhat's 9+10?";
+        options = ["19", "21"];
+      }
+      
+      // Create modal overlay
+      const overlay = document.createElement('div');
+      overlay.style.position = 'fixed';
+      overlay.style.top = '0';
+      overlay.style.left = '0';
+      overlay.style.width = '100%';
+      overlay.style.height = '100%';
+      overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+      overlay.style.display = 'flex';
+      overlay.style.justifyContent = 'center';
+      overlay.style.alignItems = 'center';
+      overlay.style.zIndex = '1000';
+      
+      // Create modal content
+      const modal = document.createElement('div');
+      modal.style.backgroundColor = 'rgb(32, 33, 36)';
+      modal.style.padding = '24px';
+      modal.style.borderRadius = '8px';
+      modal.style.width = '300px';
+      modal.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.3)';
+      
+      // Add message
+      const messageEl = document.createElement('div');
+      messageEl.textContent = message;
+      messageEl.style.marginBottom = '16px';
+      messageEl.style.whiteSpace = 'pre-line';
+      modal.appendChild(messageEl);
+      
+      // Add buttons container
+      const buttonsContainer = document.createElement('div');
+      buttonsContainer.style.display = 'flex';
+      buttonsContainer.style.justifyContent = 'flex-end';
+      buttonsContainer.style.gap = '8px';
+      
+      // Create Deltarune-style buttons
+      const button1 = createDeltaruneButton(options[0], () => {
+        document.body.removeChild(overlay);
+        if (randomNum < 0.05) {
+          setTimeout(() => alert("Wrong! It's 21!"), 100);
+        }
+      });
+      
+      const button2 = createDeltaruneButton(options[1], () => {
+        document.body.removeChild(overlay);
+        if (randomNum < 0.05) {
+          setTimeout(() => alert("Correct! It's 21!"), 100);
+        }
+      });
+      
+      buttonsContainer.appendChild(button1);
+      buttonsContainer.appendChild(button2);
+      modal.appendChild(buttonsContainer);
+      overlay.appendChild(modal);
+      document.body.appendChild(overlay);
+      
+      // Focus first button for keyboard users
+      setTimeout(() => button1.focus(), 50);
+    }
+    
+    // Add proper event listeners to buttons
+    document.getElementById('continue-btn').addEventListener('click', showCustomAlert);
+    document.getElementById('ask-later-btn').addEventListener('click', showCustomAlert);
+    
+    // Keyboard navigation for main buttons
+    document.getElementById('continue-btn').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        showCustomAlert();
+      }
+    });
+    
+    document.getElementById('ask-later-btn').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        showCustomAlert();
+      }
+    });
+  </script>
+</body>
+</html>
