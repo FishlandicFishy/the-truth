@@ -133,8 +133,8 @@
   </div>
 
   <script>
-    // Function to create Deltarune-style buttons
-    function createDeltaruneButton(text, onClick) {
+    // Function to create NutDealer-style buttons
+    function createNutDealerButton(text, onClick) {
       const button = document.createElement('button');
       button.className = 'button';
       button.textContent = text;
@@ -195,15 +195,15 @@
       buttonsContainer.style.justifyContent = 'flex-end';
       buttonsContainer.style.gap = '8px';
       
-      // Create Deltarune-style buttons
-      const button1 = createDeltaruneButton(options[0], () => {
+      // Create NutDealer-style buttons
+      const button1 = createNutDealerButton(options[0], () => {
         document.body.removeChild(overlay);
         if (randomNum < 0.05) {
           setTimeout(() => alert("Wrong! It's 21!"), 100);
         }
       });
       
-      const button2 = createDeltaruneButton(options[1], () => {
+      const button2 = createNutDealerButton(options[1], () => {
         document.body.removeChild(overlay);
         if (randomNum < 0.05) {
           setTimeout(() => alert("Correct! It's 21!"), 100);
