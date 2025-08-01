@@ -1,0 +1,246 @@
+<html>
+<head>
+<style>
+  body {
+    background-color: rgb(31, 31, 31);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #e8e8e8;
+  }
+  
+  .dialog-container {
+    width: 500px;
+    background-color: rgba(32, 33, 36, 1);
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .profile-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+  }
+  
+  .email {
+    font-size: 14px;
+    color: #9aa0a6;
+  }
+  
+  .title {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+  
+  .body-text {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  .buttons-row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .primary-button {
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    background-color: #8ab4f8;
+    color: #202124;
+    transition: background-color 0.2s;
+  }
+  
+  .primary-button:hover {
+    background-color: #aecbfa;
+  }
+  
+  .secondary-button {
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: #8ab4f8;
+  }
+  
+  .secondary-button:hover {
+    background-color: rgba(138, 180, 248, 0.1);
+  }
+  
+  .tertiary-button {
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: #8ab4f8;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .tertiary-button:hover {
+    background-color: rgba(138, 180, 248, 0.1);
+  }
+</style>
+</head>
+<body>
+  <div class="dialog-container">
+    <div class="profile-container">
+      <img class="profile-pic" src="user.png" alt="Profile picture">
+      <p class="email">user@example.com</p>
+    </div>
+    
+    <div class="title">Turn on Web & App Activity?</div>
+    
+    <div class="body-text">
+      Web & App Activity saves the things that you do on our sites, apps and services. This includes your searches and interactions with partners, as well as any associated information such as location and language.
+      <br><br>
+      If you use your device without an Internet connection, your data may still be saved in your account once you return online.
+      <br><br>
+      Not all services save this data in your account.
+      <br><br>
+      Any data saved helps us give you more personalized experiences across services, such as faster searches, better recommendations and useful ads.
+      <br><br>
+      This data may be saved and used in any service where you are signed in to give you more personalized experiences. Data older than three months will be automatically deleted. You can delete your data manually, change your auto-delete option, or stop saving data in your account settings.
+    </div>
+    
+    <div class="buttons-row">
+      <button class="primary-button" id="dont-turn-on">Don't turn on</button>
+      <button class="primary-button" id="turn-on">Turn on</button>
+    </div>
+    
+    <button class="tertiary-button" id="ask-later">Ask me in 3 days</button>
+  </div>
+
+  <script>
+    // Function to create NutDealer-style dialog
+    function showRandomDialog() {
+      //sike
+      window.location.href = "we-do-not-sell-data-to-advertisers.html";
+      /*const randomNum = Math.random();
+      let message = "Proceed?";
+      let options = ["Proceed", "Proceed"];
+      
+      if (randomNum < 0.05) {
+        message = "You stupid,\nwhat's 9+10?";
+        options = ["19", "21"];
+      } else if (randomNum < 0.1) {
+        message = "Buble";
+        options = ["Buble", "Buble"];
+      }
+      
+      // Create modal overlay
+      const overlay = document.createElement('div');
+      overlay.style.position = 'fixed';
+      overlay.style.top = '0';
+      overlay.style.left = '0';
+      overlay.style.width = '100%';
+      overlay.style.height = '100%';
+      overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+      overlay.style.display = 'flex';
+      overlay.style.justifyContent = 'center';
+      overlay.style.alignItems = 'center';
+      overlay.style.zIndex = '1000';
+      
+      // Create modal content
+      const modal = document.createElement('div');
+      modal.style.backgroundColor = 'rgb(32, 33, 36)';
+      modal.style.padding = '24px';
+      modal.style.borderRadius = '8px';
+      modal.style.width = '300px';
+      modal.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.3)';
+      
+      // Add message
+      const messageEl = document.createElement('div');
+      messageEl.textContent = message;
+      messageEl.style.marginBottom = '16px';
+      messageEl.style.whiteSpace = 'pre-line';
+      modal.appendChild(messageEl);
+      
+      // Add buttons container
+      const buttonsContainer = document.createElement('div');
+      buttonsContainer.style.display = 'flex';
+      buttonsContainer.style.justifyContent = 'flex-end';
+      buttonsContainer.style.gap = '8px';
+      
+      // Create buttons
+      const button1 = document.createElement('button');
+      button1.className = 'primary-button';
+      button1.textContent = options[0];
+      button1.onclick = () => {
+        document.body.removeChild(overlay);
+        if (randomNum < 0.05) {
+          setTimeout(() => alert("Wrong! It's 21!"), 100);
+        }
+      };
+      
+      const button2 = document.createElement('button');
+      button2.className = 'primary-button';
+      button2.textContent = options[1];
+      button2.onclick = () => {
+        document.body.removeChild(overlay);
+        if (randomNum < 0.05) {
+          setTimeout(() => alert("Correct! It's 21!"), 100);
+        }
+      };
+      
+      buttonsContainer.appendChild(button1);
+      buttonsContainer.appendChild(button2);
+      modal.appendChild(buttonsContainer);
+      overlay.appendChild(modal);
+      document.body.appendChild(overlay);
+      
+      // Focus first button for keyboard users
+      setTimeout(() => button1.focus(), 50);
+      */
+    }
+    
+    // Add event listeners to all buttons
+    document.getElementById('dont-turn-on').addEventListener('click', showRandomDialog);
+    document.getElementById('turn-on').addEventListener('click', showRandomDialog);
+    document.getElementById('ask-later').addEventListener('click', showRandomDialog);
+    
+    // Keyboard navigation support
+    document.getElementById('dont-turn-on').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        showRandomDialog();
+      }
+    });
+    
+    document.getElementById('turn-on').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        showRandomDialog();
+      }
+    });
+    
+    document.getElementById('ask-later').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        showRandomDialog();
+      }
+    });
+  </script>
+</body>
+</html>
