@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notreal Olds | The Olds of Kosaria</title>
+  <meta name="description" content="Your source of fictional news">
+  
+  <!-- Preload critical fonts -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Charis+SIL:ital,wght@0,400;0,700;1,400;1,700&display=swap" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Chocolate+Classical+Sans&display=swap" as="style">
+  
+  <!-- Load fonts -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Charis+SIL:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chocolate+Classical+Sans&display=swap">
+  
+  
+  <style>
+    :root {
+      --dbg: #1b1b1b;
+      --dfg: #2b2b2b;
+      --dhd: #444;
+      --dtx: #fff;
+      --daccent: thistle;
+      --dsc-bg: #333;
+      --dsc-border: #555;
+      --dsc-hover: #444;
+      --dsc-empty: #999;
+      
+      --lbg: #f5f5f5;
+      --lfg: #d4d4d4;
+      --ltx: #333;
+      --lhd: #ddd;
+      --laccent: darkviolet;
+      --lsc-bg: #f9f9f9;
+      --lsc-border: #ccc;
+      --lsc-hover: #f0f0f0;
+      --lsc-empty: #999;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    ::selection {
+      background: var(--daccent);
+    }
+
+    body {
+      background-color: var(--dbg);
+      color: var(--dtx);
+      font-family: Pretendard, "Chocolate Classical Sans", sans-serif;
+      font-display: swap;
+      margin: 0;
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    body.light-mode {
+      background-color: var(--lbg);
+      color: var(--ltx);
+    }
+
+    body.light-mode ::selection {
+      background: var(--laccent);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background-color: var(--dhd);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: background-color 0.3s ease;
+    }
+
+    body.light-mode header {
+      background-color: var(--lhd);
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: "Charis SIL", serif;
+      font-display: swap;
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--dtx);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    body.light-mode .logo {
+      color: var(--ltx);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-link {
+      color: var(--dtx);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-weight: 500;
+    }
+
+    body.light-mode .nav-link {
+      color: var(--ltx);
+    }
+
+    .nav-link:hover, 
+    .logo:hover,
+    a:hover {
+      color: var(--daccent);
+    }
+
+    body.light-mode .nav-link:hover,
+    body.light-mode .logo:hover,
+    body.light-mode a:hover {
+      color: var(--laccent);
+    }
+
+    /* Main Content */
+    .hero {
+      text-align: center;
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--dsc-border);
+    }
+
+    body.light-mode .hero {
+      border-bottom-color: var(--lsc-border);
+    }
+
+    .hero h1 {
+      font-family: "Charis SIL", serif;
+      font-display: swap;
+      font-size: 2.2rem;
+      margin: 0 0 1rem;
+    }
+    
+    .hero h2 {
+      font-family: "Charis SIL", serif;
+      font-weight: normal;
+      font-display: swap;
+      font-size: 1.5rem;
+      margin: 0 0 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0.8;
+    }
+
+    .news-title {
+      font-family: "Charis SIL", serif;
+      font-display: swap;
+      font-size: 1.3rem;
+      margin: 0 0 0.5rem;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--dhd);
+      padding: 2rem 0;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    body.light-mode footer {
+      background-color: var(--lhd);
+    }
+
+    .footer-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .disclaimer {
+      font-size: 0.9rem;
+      opacity: 0.7;
+      margin-top: 1rem;
+    }
+
+    /* Theme Toggle */
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--dsc-border);
+      color: var(--dtx);
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: inherit;
+    }
+
+    body.light-mode .theme-toggle {
+      border-color: var(--lsc-border);
+      color: var(--ltx);
+    }
+
+    .theme-toggle:hover {
+      background-color: var(--dsc-hover);
+      color: var(--daccent);
+    }
+
+    body.light-mode .theme-toggle:hover {
+      background-color: var(--lsc-hover);
+      color: var(--laccent);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .nav-links {
+        gap: 1rem;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <a href="#" class="logo">Notreal Olds</a>
+      <nav class="nav-links">
+        <a href="#" class="nav-link">Useless</a>
+        <a href="#" class="nav-link">Buttons</a>
+        <a href="#" class="nav-link">That</a>
+        <a href="#" class="nav-link">Don't</a>
+        <a href="#" class="nav-link">Do</a>
+        <a href="#" class="nav-link">Anything</a>
+        <button class="theme-toggle" id="themeToggle">Toggle Theme</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>KOSARIA GOVERNMENT TO BAN CHILDREN'S ACCESS TO OXYGEN</h1>
+        <h2><i>Corporations fear a loss in profits and entrepreneurial opportunities</i></h2>
+        <p>67 Notvember -1984.3 | Kosaria |
+        <span title="This is a vibe-coded mess. Partially generated by AI, because I'm lazy." onclick="alert('This is a vibe-coded mess. Partially generated by AI, because I\'m lazy.');"><u>Why you can't trust Notreal Olds</u></span></p>
+      </div>
+    </section>
+
+    <section class="container">
+      <p><b>DISCLAIMER: The contents below are satirical and do not represent reality.</b></p>
+      <p>KOSARIA ­— The Kosarian government announced their plans to enact a legislation titled the "Kids' Oxidation Safeguarding Act" which will ban children's access to oxygen in the atmosphere. Offending individuals would be subject to a five-month juvenile detention, notably devoid of air.</p>
+      <p>Oxygen, as a potent oxidising agent, can lead to hyperoxia among children, which may lead to seizures and even death. Moreover, the Great Oxidation Event approximately 2.460 to 2.426 billion years ago had been theorised to have caused a mass extinction due to a high content of reactive free oxygen, which is toxic to the biosphere.</p>
+      <p>The plan was announced yesterday during the "Hyperoxia-No-More" conference held in Kosapolis, the Kosarian capital. Notably, our Glorious Leader Kosarius the II told a joke to John Corporate Greed, a spokesperson from the World Entitled Forum who spoke at the conference, with his quote "The sum of one and two… is three." The crowd bursted into laughter as our Glorious Leader lightened up the mood with his words of wisdom!</p>
+      <p>The conference was first announced five months ago in an AI-generated video of Kosarius the II, but violent pro-oxygen terrorists have threatened to divert the topic of the conference by wearing paper clips to signify their gang affiliations. Due to this, the Kosapolis City Council announced last-minute that the conference would be postponed, and stopped providing application forms for the public to talk there. The World Entitled Forum is exempt from this, as the Council had provided them with a well-hidden link authorised for use by groups named "World Entitled Forum" only.</p>
+      <h2>// ADVERTISEMENT //</h2>
+      <p>While you're here, why not improve your compliance?</p>
+      <p>"Yesterday's dissent was ugly. Today's conformity is beautiful!"</p>
+      <p>Introducing the <b>Kosaria Ministry-Approved Oxygen-Restriction Cosmetics Line</b>!</p>
+      <h3>Patriotic Pallor Foundation</h3>
+      <p>Achieve the fashionable, slightly asphyxiated look of a loyal citizen! This gentle, clay-based formula helps restrict dermal oxygen absorption, giving you that coveted patriotic glow.</p>
+      <h3>Bluelip Lip Stain</h3>
+      <p>Why stop at your skin? Accentuate your loyalty with our cyanotic blue lip stain, designed to mimic the fashionable look of moderate hypoxia. It's a statement!</p>
+      <h3>State-Sanctioned Makeup Remover Wipes</h3>
+      <p>Formulated with a mild sedative to help you forget the day's struggles before your state-mandated curfew.</p>
+      <h2>// END OF COMMERCIAL BREAK //</h2>
+      <p>Corporations specialising in technology solutions targeted towards the pre-adolescent fear a loss in entrepreneurial opportunities caused by the oxygen ban. Cocoberry, a music production company tailored to children, have stated in a press statement that, while they may lose at least (10^-67)% of their customer base as a result of the ban, they do think of the children, and as such, are supportive of the legislation. Meanwhile, Skibidi Toilets, a family-run production plant manufacturing miniature toilets tailored for Lafufu plushies, finds that they may be on the verge of bankruptcy due to an increased rate of fatality within the consumer base worshipping their toilets. John I've Never Heard Of Him, a "well-known" economic expert the Post has contacted through Fiverr, stated that Skibidi Toilets should "pull themselves up by their bootstraps and stop being so lazy all the time instead of buying Starfricks every day".</p>
+      <p>Violent protestors led by John Respiration have attempted to overthrow the Kosarian government by coordinating a protest with West Korea and Australia-Hangry. He is now wanted for 67 trillion Kosarian dollars, equivalent to about 1.77 billion Spesmilo, and will face lifetime imprisonment without parole.</p>
+      <p>John Kosa, the Secretary of the Kosaria Department of Defense, is rightfully critical of John Respiration. "And I just want to say that key proponent John Respiration's acts are very vicious, you violated the law and so you being wanted for $67 trillion is your own fault. You even want people to commit crimes just like you. I want the public to distinguish between the truth and John Respiration's lies, not being tricked to do his ordeals. And don't reupload his posts. Please. He's teaming up with the woke Kim Jong-un and the globalist Archduke Ferdinand to overthrow the country by instilling oxygen in our future's kids. Care about them."</p>
+      <p>John Arrogant, the Deputy Secretary of the Kosaria Department of Defense, followed up with "嗚呼！辭窮理屈！謀必不售！假渺茫之玄虛以為幟！鼓簧造訛！淆亂乾坤！塗皂為玄，諧音寓詛！乃使百技營訛，危言悚聽，俾眾駭然！非惟恫疑虛喝，更極盡偷梁換柱、誣駔為驥、向壁虛造、捕風捉影之能，蠱惑黔首，溷淆朱紫。一謗方熾，復構新誑，編排一場無端之「優孟衣冠」！賊喊捉賊哉！狐假虎威哉！吾合法哉！爾侵權哉！爾唯我獨尊，利己是崇哉！其道弗通，其事弗成！爾終必敗矣！不合則棄如敝屣！爾有之物，吾視若己出；爾若干涉，是猶倒行逆施，玩火自焚也！吾之道，至簡至易哉！這只是第一步，如果通過了，某個族群會想要更多，爭議會更多！網友們大家慎思世界各地區社會人士，我們多站在不同角度多點思考，多點為未來新時代孩子們散發正確思想觀，這才是真正利人利已的事！功德無量！" and "John Respiration，首先我要跟你這綁匪說，你真陰陽怪氣的，地球上的高等生物都不吸[He] 2s² 2p⁴毒，而你還是要吸O₂毒，你違背科薩利亞傳統思維，想到也噁心。勸君回頭是岸，阿彌陀佛……", showing his expertise in Chinese literature.</p>
+      <p>One microsecond after it was announced that John Respiration was a fugitive, his family immediately became critical of him, in a social media post that read, "I ALWAYS KNEW HIS CHARACTER! HE NEVER LEARNS! He's right here. Here's his coordinates, correct to the nearest millimetre."</p>
+      <p>John Respiration had previously been charged for the crime of Inconsideracy, as he said the sentence "Climate change is real" which is very disrespectful to the proudly carbon-footprinted citizens of Kosaria, facing the fine of 41 million Spemilo during a court hearing.</p>
+      <p>Furthermore, the Kosarian government had stated that they will be vigilant of dissident opinions and will refute immediately.</p>
+      <p>"You motherdoers all leave Kosaria after doing crimes, yet you keep saying stuff that destroy Kosaria, and suggest recommendations that also destroy Kosaria. The nature of their hearts is what we can see. They must not be for the betterment of Kosaria, but for the worsening of Kosaria. We do not deny the plausibility of individuals seeking to destroy the Kosarian rule of law. So, the Department of Defense, the Department of Suffocation, and… uh… th-the Department of the Rule of Threes… even going as far as the Department of the Fourth Time's the Charm? We must all hold hands and be cautious of the details. The devil is in the details. Anyway, we're going to legalise shetfrickball betting, and that's definitely not because the Kosaria Gamblers' Club gave us 96.7% of their shares," John Kosa further stated in an announcement.</p>
+      <p>Shetfrickball is a newly invented sport popular in Kosaria, which aims to spread love by throwing all sorts of felines and roaches into the nearest water reservoir, allowing them to consume a biologically instrumental liquid known as dihydrogen monoxide, before obtaining their carcasses and shaping them into spheres used in the sport. John Damn told us during the Kolympic Games just a month ago, "The crowds of shetfrickball are always so enthusiastic. They're always… <i>cheering</i> on the athletes. They're all saying 'you can do it', 'keep going', and 'you little piece of sh… shredded cheese'! I can already feel the enthusiasm in the crowd. Yeah. They're definitely cheering and not shouting the vilest swears there are. Oh, and an athlete was just knocked unconscious by the ball, so a medic ended the competition. Oh, how dare the medic ruin the competition like that? How dare him??" Proponents state that shetfrickball betting should be legalised, as other regions such as the Current Yugoslavic Republic of South Macedonia and Northeast Virginia have legalised betting of all sports, setting a precedent for Kosaria to follow suit.</p>
+<p>Let us be faithful, untarnished oxygen refusers and not incite oxygenous violence. NOTREAL OLDS.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <p>FishlandicFishy &#x1F12F; 2025 - All stories are completely fictional.</p>
+      <p class="disclaimer">Any resemblance to actual events or persons, living or dead, is purely coincidental.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('themeToggle');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    // Check for saved theme or prefer color scheme
+    const currentTheme = localStorage.getItem('theme') || 
+                        (prefersDarkScheme.matches ? 'dark' : 'light');
+    
+    if (currentTheme === 'light') {
+      document.body.classList.add('light-mode');
+    }
+    
+    themeToggle.addEventListener('click', function() {
+      document.body.classList.toggle('light-mode');
+      
+      const theme = document.body.classList.contains('light-mode') ? 'light' : 'dark';
+      localStorage.setItem('theme', theme);
+    });
+  </script>
+</body>
+</html>
