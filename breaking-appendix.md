@@ -18,6 +18,7 @@
 * John Arrogant's tirades are word-for-word from actual governmental posts and from the general public (you can see how bigoted it is)
 * John Respiration's family snitching on him = a protestor's family snitching on his location right after hearing about him being a fugitive; also saying "I always knew his character"
 * "Climate change is real" = our school's English Speaking exams passing off the mere name-drop of "global warming" as "too scientific" as "this is not a scientific discussion"
+* John Compromised's quote directly copied from <https://youtu.be/1jF-9ge1QK0> (6:44)
 * "Crime of Inconsideracy" is real, despite how absurd it sounds
 * Kosaria Gambler's Club bribing officials to vote for sports gambling legalisation = another gambling club in another city doing the same, causing basketball gambling to be legalised… for exclusive use by said gambling club. Gotta love monopolisation.
 * Shetfrickball = every sport, ever (I say this indiscriminately, all sports are inherently hooliganistic and you can't change my mind)
