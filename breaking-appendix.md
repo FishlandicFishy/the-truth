@@ -17,13 +17,14 @@
 * John Kosa's tirades are word-for-word from actual political tirades, just with keywords replace with Kosaria-appropriate ones
 * John Arrogant's tirades are word-for-word from actual governmental posts and from the general public (you can see how bigoted it is)
 * John Respiration's family snitching on him = a protestor's family snitching on his location right after hearing about him being a fugitive; also saying "I always knew his character"
-* "Climate change is real" = our school's English Speaking exams passing off the mere name-drop of "global warming" as "too scientific" as "this is not a scientific discussion"
+* "Climate change is real" = our school's English Speaking exams passing off the mere name-drop of "global warming" as "too scientific", as "this is not a scientific discussion"
 * John Compromised's quote directly copied from <https://youtu.be/1jF-9ge1QK0> (6:44)
 * "Crime of Inconsideracy" is real, despite how absurd it sounds
 * Kosaria Gambler's Club bribing officials to vote for sports gambling legalisation = another gambling club in another city doing the same, causing basketball gambling to be legalised… for exclusive use by said gambling club. Gotta love monopolisation.
 * Shetfrickball = every sport, ever (I say this indiscriminately, all sports are inherently hooliganistic and you can't change my mind)
 * "throwing cats and roaches into water reservoirs" = an incident where Buddhists "spread love" by "releasing" thousands of cats and invasive species (including roaches) into water reservoirs, causing many of them to die
-* "The crowds of shetfrickball are always so enthusiastic" is analog to what the crowds at said sports games would say, they just don't want to admit that they swear a lot
+* "The crowds of shetfrickball are always so enthusiastic" is analogous to what the crowds at said sports games would say, they just don't want to admit that they swear a lot
+* Cheering for the second-to-last place team while saying their performance is great is very real
 * "Oh, and an athlete was just knocked unconscious by the ball, so a medic ended the competition. Oh, how dare the medic ruin the competition like that? How dare him??": common sight at boxing. Unconscious boxers rescued by medics are booed.
 * "…other regions such as the Current Yugoslavic Republic of South Macedonia and Northeast Virginia have legalised betting of all sports, setting a precedent for Kosaria to follow suit." is a real argument (albeit with different regions) invoked in support of basketball gambling.
 * Advertisement parodies an advertisement in the download page of a Kangxi Dictionary-based font (see Appendix II).
