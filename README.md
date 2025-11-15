@@ -8,3 +8,7 @@ Recently, there are numerous extremist organisations creating "truth" websites w
 This website is a satirical take on stereotypical extremist propaganda sites. Nothing on this site is true. I do not intend to offend or endorse any views. The font used for the SVG above is BabelStone Modern, which is available [here](http://www.babelstone.co.uk/Fonts/Download/BabelStoneModern.ttf).
 
 The website and its HTML files (except for `we-do-not-sell-data-to-advertisers.html` and `can-we-sell-your-data-to-advertisers-uwu.html`, which are partially taken from Google) are in the public domain. The "image proof" is sourced from [The Ralsei Situation Is CRAZY](https://www.youtube.com/watch?v=mATYI6QQGnc) and belongs to its creator.
+
+## Disclaimer 2
+
+This website is a parody and is not affiliated with any actual conspiracy organisations, propaganda sites, or cults.
